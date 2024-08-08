@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameSelect = document.getElementById('gameSelect');
     const copyStatus = document.getElementById('copyStatus');
     const telegramChannelBtn = document.getElementById('telegramChannelBtn');
-
+    const creatorChannelBtn = document.getElementById('creatorChannelBtn');
     const initializeLocalStorage = () => {
         const now = new Date().toISOString().split('T')[0];
         Object.values(games).forEach(game => {
