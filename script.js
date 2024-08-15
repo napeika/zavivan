@@ -146,11 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        keyCountLabel.innerText = `Number of keys: ${keyCount}`;
+        keyCountLabel.innerText = `Количество ключей: ${keyCount}`;
 
         progressBar.style.width = '0%';
         progressText.innerText = '0%';
-        progressLog.innerText = 'Starting...';
+        progressLog.innerText = 'Старт...';
         progressContainer.classList.remove('hidden');
         keyContainer.classList.add('hidden');
         generatedKeysTitle.classList.add('hidden');
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         progressBar.style.width = '100%';
         progressText.innerText = '100%';
-        progressLog.innerText = 'Complete';
+        progressLog.innerText = 'Завершено';
 
         startBtn.classList.remove('hidden');
         keyCountSelect.classList.remove('hidden');
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
         generatedKeysTitle.classList.add('hidden');
         copyAllBtn.classList.add('hidden');
         keysList.innerHTML = '';
-        keyCountLabel.innerText = 'Number of keys:';
+        keyCountLabel.innerText = 'Количество ключей:';
     });
 
     document.getElementById('creatorChannelBtn').addEventListener('click', () => {
