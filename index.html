@@ -3,50 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Генератор кодов by ZavIvan</title>
+    <title>Генератор Ключей Hamster Kombat</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Генератор кодов by ZavIvan</h1>
-        <div class="form-group">
-            <label for="gameSelect">Выберите игру:</label>
-            <select id="gameSelect">
-                <option value="1">Riding Extreme 3D</option>
-                <option value="2">Chain Cube 2048</option>
-                <option value="3">My Clone Army</option>
-                <option value="4">Train Miner</option>
+    <main class="main-container">
+        <section class="language-selector">
+            <select id="languageSelect">
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+                <option value="sr">Српски</option>
+                <option value="be">Беларуская</option>
+                <option value="ar">العربية</option>
+                <option value="fa">فارسی</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="pt">Português</option>
+                <option value="zh">简体中文</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="hi">हिन्दी</option>
+                <option value="tr">Türkçe</option>
+                <option value="pl">Polski</option>
             </select>
-        </div>
-        <div class="form-group">
-            <label id="keyCountLabel" for="keyCountSelect">Число ключей:</label>
+        </section>
+        <section class="container">
+            <h1>Генератор Ключей Hamster Kombat</h1>
+            <label for="gameSelect" id="gameSelectLabel">Выберите игру для генерации ключа:</label>
+            <select id="gameSelect">
+                <option value="MyCloneArmy">My Clone Army</option>
+                <option value="ChainCube2048">Chain Cube 2048</option>
+                <option value="TrainMiner">Train Miner</option>
+                <option value="BikeRide3D">Bike Ride 3D</option>
+                <option value="MergeAway">Merge Away</option>
+                <option value="TwerkRace">Twerk Race</option>
+            </select>
+            <label for="keyCountSelect" id="keyCountLabel">Выберите количество ключей для генерации:</label>
             <select id="keyCountSelect">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
             </select>
-        </div>
-        <button id="startBtn">Генерировать ключи</button>
-        <div id="progressContainer" class="hidden">
-            <div class="progress-bar">
-                <div id="progressBar"></div>
+            <button id="startBtn" class="button">Сгенерировать ключи</button>
+            <div id="progressContainer" class="progress-container hidden">
+                <div id="progressBar" class="progress-bar"></div>
+                <span id="progressText" class="progress-text">0%</span>
             </div>
-            <div id="progressText">0%</div>
-            <div id="progressLog">Старт...</div>
-        </div>
-        <div id="keyContainer" class="hidden">
-            <h3 id="generatedKeysTitle" class="hidden">Сгенерированные ключи:</h3>
-            <div id="keysList"></div>
-            <button id="copyAllBtn" class="hidden">Скопировать все ключи</button>
-            <div id="copyStatus" class="hidden">Скопировано!</div>
-            <button id="generateMoreBtn">Генерировать</button>
-        </div>
-        <div class="footer">
-            <p>Предупреждение: Отказ от ответственности. Приложение сделано в образовательных целях. </p>
-        </div>
-    </div>
-    <script src="script.js"></script>
+            <div id="keyContainer" class="key-container hidden">
+                <h2 id="generatedKeysTitle">Сгенерированные ключи:</h2>
+                <button id="copyAllBtn" class="button hidden">Скопировать все ключи</button>
+                <div id="keysList" class="keys-list"></div>
+            </div>
+        </section>
+        <button id="creatorChannelBtn" class="button footer-button">Powered by ZavIvan</button>
+    </main>
 </body>
 </html>
