@@ -27,7 +27,7 @@ const gamePromoConfigs = {
     }, 
 };
 
-let currentAppConfig = gamePromoConfigs.MyCloneArmy;
+
 var currentLanguage;
 var keygenActive = false;
 
