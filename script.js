@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     creatorChannelBtn.addEventListener('click', () => {
-        window.open('https://telegram.me/mmdceto', '_blank');
+        window.open('https://t.me/ZavIvanChannel', '_blank');
     });
 
     telegramChannelBtn.addEventListener('click', () => {
