@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promo Generator [CeTo]</title>
+    <title>Генератор ключей Hamster Kombat</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         .hidden {
@@ -13,11 +13,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hamster Promo Code Generator [CeTo]</h1>
+        <h1>Генератор ключей Hamster Kombat</h1>
 
         <div id="initialPanel" class="form-group panel">
             <div>
-                <label for="gameSelect">Select Game:</label>
+                <label for="gameSelect">Выберите игру::</label>
                 <select id="gameSelect">
                     <option value="1">Riding Extreme 3D</option>
                     <option value="2">Chain Cube 2048</option>
@@ -28,7 +28,7 @@
                 </select>
             </div>
             <div>
-                <label for="keyCountSelect">Select Number of Keys:</label>
+                <label for="keyCountSelect">Количество ключей:</label>
                 <select id="keyCountSelect">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -36,7 +36,7 @@
                     <option value="4">4</option>
                 </select>
             </div>
-            <button id="startBtn" class="primary-btn">Generate Keys</button>
+            <button id="startBtn" class="primary-btn">Генерировать</button>
         </div>
 
         <div id="progressContainer" class="hidden panel">
@@ -44,20 +44,20 @@
                 <div id="progressBar"></div>
             </div>
             <p id="progressText">0%</p>
-            <p id="progressLog">Starting...</p>
+            <p id="progressLog">Старт...</p>
         </div>
 
         <div id="keyContainer" class="hidden panel">
-            <h2 id="generatedKeysTitle">Generated Keys</h2>
+            <h2 id="generatedKeysTitle">Сгенерированные ключи</h2>
             <div id="keysList"></div>
-            <button id="copyAllBtn" class="primary-btn hidden">Copy All Keys</button>
+            <button id="copyAllBtn" class="primary-btn hidden">Копировать все ключи</button>
         </div>
 
-        <p id="keyCountLabel" class="hidden panel">Number of keys:</p>
+        <p id="keyCountLabel" class="hidden panel">Количество ключей:</p>
 
-        <button id="generateMoreBtn" class="hidden secondary-btn">Generate More</button>
-        <button id="creatorChannelBtn" class="secondary-btn">Contact Creator</button>
-        <p id="copyStatus" class="hidden panel">Keys copied to clipboard!</p>
+        <button id="generateMoreBtn" class="hidden secondary-btn">Генерировать еще</button>
+        <button id="creatorChannelBtn" class="secondary-btn">Подписаться на канал</button>
+        <p id="copyStatus" class="hidden panel">Ключи скопированы!</p>
         
         <div class="footer hidden panel">
             <button id="telegramChannelBtn" class="secondary-btn">Telegram Channel</button>
