@@ -35,7 +35,6 @@
         </section>
         <section class="container">
             <h1>Генератор Ключей Hamster Kombat</h1>
-            <label for="gameSelect" id="gameSelectLabel">Выберите игру для генерации ключа:</label>
             <label for="gameSelect">Выберите игру:</label>
                 <select id="gameSelect">
                     <option value="1">Riding Extreme 3D</option>
@@ -46,21 +45,14 @@
                     <option value="6">Twerk Race 3D</option>
                 </select>
             <label for="keyCountSelect" id="keyCountLabel">Выберите количество ключей для генерации:</label>
-            <select id="keyCountSelect">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-            </select>
-            <button id="startBtn" class="button">Сгенерировать ключи</button>
+            <<label for="keyCountSelect">Select Number of Keys:</label>
+                <select id="keyCountSelect">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+           <button id="startBtn" class="primary-btn">Генерировать ключи</button>
             <div id="progressContainer" class="progress-container hidden">
                 <div id="progressBar" class="progress-bar"></div>
                 <span id="progressText" class="progress-text">0%</span>
