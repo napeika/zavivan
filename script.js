@@ -336,7 +336,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Could not copy text: ', err);
         });
     });
-    document.getElementById('creatorChannelBtn').innerText = translations.footerButton;
     document.getElementById('creatorChannelBtn').addEventListener('click', () => {
         window.location.href = 'https://t.me/ZavIvanChannel';
     });
