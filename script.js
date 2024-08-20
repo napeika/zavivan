@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-     document.getElementById('creatorChannelBtn').innerText = translations.footerButton;
     const startBtn = document.getElementById('startBtn');
     const keyCountSelect = document.getElementById('keyCountSelect');
     const keyCountLabel = document.getElementById('keyCountLabel');
@@ -199,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        keyCountLabel.innerText = `Number of keys: ${keyCount}`;
+        keyCountLabel.innerText = `Количество ключей: ${keyCount}`;
 
         progressBar.style.width = '0%';
         progressText.innerText = '0%';
@@ -337,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Could not copy text: ', err);
         });
     });
-
+    document.getElementById('creatorChannelBtn').innerText = translations.footerButton;
     document.getElementById('creatorChannelBtn').addEventListener('click', () => {
         window.location.href = 'https://t.me/ZavIvanChannel';
     });
