@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         progressBar.style.width = '0%';
         progressText.innerText = '0%';
-        progressLog.innerText = 'Starting... \n Please wait It may take upto 1 min to Login';
+        progressLog.innerText = 'Старт... \n Пожалуйста, ожидайте';
         progressContainer.classList.remove('hidden');
         keyContainer.classList.add('hidden');
         generatedKeysTitle.classList.add('hidden');
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
         logMessage('Generating the key...');
         const key = await generateKey(clientToken, game.promoId);
         logMessage('Key generation successful.');
-        updateProgress(30 / keyCount, 'Generating key...');
+        updateProgress(30 / keyCount, 'Генерация ключей...');
         return key;
     } catch (error) {
         logMessage(`Key generation failed: ${error.message}`);
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
             keysList.innerHTML = keys.filter(key => key).map(key =>
                 `<div class="key-item">
                     <input type="text" value="${key}" readonly>
-                    <button class="copyKeyBtn" data-key="${key}">Copy Key</button>
+                    <button class="copyKeyBtn" data-key="${key}">Копировать ключ</button>
                 </div>`
             ).join('');
             copyAllBtn.classList.remove('hidden');
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
             keysList.innerHTML =
                 `<div class="key-item">
                     <input type="text" value="${keys[0]}" readonly>
-                    <button class="copyKeyBtn" data-key="${keys[0]}">Copy Key</button>
+                    <button class="copyKeyBtn" data-key="${keys[0]}">Копировать ключ</button>
                 </div>`;
         }
 
@@ -340,11 +340,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('creatorChannelBtn').addEventListener('click', () => {
-        window.open('https://telegram.me/Sam_Dm_bot', '_blank');
+        window.open('https://t.me/ZavIvanChannel', '_blank');
     });
 
     telegramChannelBtn.addEventListener('click', () => {
-        window.open('https://telegram.me/Insta_Buy_Follower', '_blank');
+        window.open('https://t.me/ZavIvanChannel', '_blank');
     });
 
     document.getElementById('ShowKeysBtn').addEventListener('click', () => {
@@ -369,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (codesGeneratedToday.length > 0) {
             generatedCodesList.innerHTML = codesGeneratedToday.join('');
         } else {
-            generatedCodesList.innerHTML = '<li>No codes generated today.</li>';
+            generatedCodesList.innerHTML = '<li>Сегодня вы не генерировали ключи.</li>';
         }
 
         generatedCodesContainer.style.display = 'block';
