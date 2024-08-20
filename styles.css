@@ -153,7 +153,16 @@ button {
     margin: 5px; 
 }
 
+#telegramChannelBtn{
+    background-color: green;
+}
 
+#countdownContainer {
+    display: none;
+    font-size: 1.05em;
+    color: #ff0000;
+    margin: 10px 0;
+}
 @media (max-width: 600px) {
     .container {
         width: 100%; 
