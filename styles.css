@@ -58,7 +58,7 @@ button {
     border-radius: 8px;
     cursor: pointer;
     border: none;
-    color: #fff;
+    color: #b39ddb;
     transition: background-color 0.3s;
 }
 
@@ -154,7 +154,7 @@ button {
 }
 
 #telegramChannelBtn{
-    background-color: green;
+    background-color: #b39ddb;
 }
 
 #countdownContainer {
