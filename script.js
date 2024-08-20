@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-
+     document.getElementById('creatorChannelBtn').innerText = translations.footerButton;
     const startBtn = document.getElementById('startBtn');
     const keyCountSelect = document.getElementById('keyCountSelect');
     const keyCountLabel = document.getElementById('keyCountLabel');
@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyStatus = document.getElementById('copyStatus');
     const previousKeysContainer = document.getElementById('previousKeysContainer');
     const previousKeysList = document.getElementById('previousKeysList');
-    const telegramChannelBtn = document.getElementById('telegramChannelBtn');
 
     //for logs
     const logMessage = (message) => {
@@ -340,12 +339,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('creatorChannelBtn').addEventListener('click', () => {
-        window.open('https://t.me/ZavIvanChannel', '_blank');
+        window.location.href = 'https://t.me/ZavIvanChannel';
     });
 
-    telegramChannelBtn.addEventListener('click', () => {
-        window.open('https://t.me/ZavIvanChannel', '_blank');
-    });
 
     document.getElementById('ShowKeysBtn').addEventListener('click', () => {
         const generatedCodesContainer = document.getElementById('generatedCodesContainer');
