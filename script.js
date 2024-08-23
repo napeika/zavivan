@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startBtn.addEventListener('click', async () => {
         const keyCount = parseInt(keyRange.value);
         if (!selectedGame) {
-            alert('Please select a game first.');
+            alert('Сначала выберите игру.');
             return;
         }
 
@@ -114,11 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.grid-container').style.display = 'none';
         keyCountGroup.style.display = 'none';
 
-        keyCountLabel.innerText = `Number of keys: ${keyCount}`;
+        keyCountLabel.innerText = `Количество ключей: ${keyCount}`;
 
         progressBar.style.width = '0%';
         progressText.innerText = '0%';
-        progressLog.innerText = 'Starting...';
+        progressLog.innerText = 'Старт...';
         progressContainer.classList.remove('hidden');
         keyContainer.classList.add('hidden');
         generatedKeysTitle.classList.add('hidden');
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         progressBar.style.width = '100%';
         progressText.innerText = '100%';
-        progressLog.innerText = 'Complete';
+        progressLog.innerText = 'Готово';
 
         startBtn.classList.remove('hidden');
         keyCountGroup.classList.remove('hidden');
