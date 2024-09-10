@@ -1,3 +1,44 @@
+function toggleTheme() {
+    const html = document.documentElement;
+    const themeIcon = document.getElementById('themeIcon');
+    
+    if (html.getAttribute('data-theme') === 'dark') {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+}
+
+function setTheme() {
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.setAttribute('data-theme', 'dark');
+    }
+}
+
+// Call setTheme on page load
+// Call setTheme on page load
+document.addEventListener('DOMContentLoaded', () => {
+    setTheme();
+    const themeIcon = document.getElementById('themeIcon');
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+});
+
+// Listen for changes in system color scheme
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setTheme);
+
 document.addEventListener('DOMContentLoaded', () => {
     const games = {
         1: {
@@ -62,6 +103,34 @@ document.addEventListener('DOMContentLoaded', () => {
             promoId: '8814a785-97fb-4177-9193-ca4180ff9da8',
             timing: 20000, // 20 seconds
             attempts: 20,
+        },
+        10: {
+            name: 'Tile Trio',
+            appToken: 'e68b39d2-4880-4a31-b3aa-0393e7df10c7',
+            promoId: 'e68b39d2-4880-4a31-b3aa-0393e7df10c7',
+            timing: 20000, // 20 seconds
+            attempts: 20,
+        },
+        11: {
+            name: 'Zoopolis',
+            appToken: 'b2436c89-e0aa-4aed-8046-9b0515e1c46b',
+            promoId: 'b2436c89-e0aa-4aed-8046-9b0515e1c46b',
+            timing: 20000, // 20 seconds
+            attempts: 20,
+        },
+        12: {
+            name: 'Fluff Crusade',
+            appToken: '112887b0-a8af-4eb2-ac63-d82df78283d9',
+            promoId: '112887b0-a8af-4eb2-ac63-d82df78283d9',
+            timing: 20000, // 40 seconds
+            attempts: 30,
+        },
+        13: {
+            name: 'Stone Age',
+            appToken: '04ebd6de-69b7-43d1-9c4b-04a6ca3305af',
+            promoId: '04ebd6de-69b7-43d1-9c4b-04a6ca3305af',
+            timing: 20000, // 40 seconds
+            attempts: 30,
         }
     };
 
@@ -90,9 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
             gameOptions.forEach(opt => opt.classList.remove('selected'));
             option.classList.add('selected');
             selectedGame = option.dataset.game;
-
+    
             keyCountGroup.classList.remove('hidden');
             startBtn.classList.remove('hidden');
+    
+            // Smooth scroll to the key count group
+            keyCountGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     });
 
@@ -118,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         progressBar.style.width = '0%';
         progressText.innerText = '0%';
-        progressLog.innerText = 'Старт...';
+        progressLog.innerText = 'Starting...';
         progressContainer.classList.remove('hidden');
         keyContainer.classList.add('hidden');
         generatedKeysTitle.classList.add('hidden');
@@ -148,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             for (let i = 0; i < game.attempts; i++) {
                 const hasCode = await emulateProgress(clientToken, game.promoId);
-                updateProgress((100 / game.attempts) / keyCount, `Прогресс ${i + 1}/${game.attempts}...`);
+                updateProgress((100 / game.attempts) / keyCount, `Emulating progress ${i + 1}/${game.attempts}...`);
                 if (hasCode) {
                     break;
                 }
@@ -157,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 const key = await generateKey(clientToken, game.promoId);
-                updateProgress(100 / keyCount, 'Generating key...');
+                updateProgress(100 / keyCount, 'Генерация ключей...');
                 return key;
             } catch (error) {
                 alert(`Failed to generate key: ${error.message}`);
@@ -171,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
             keysList.innerHTML = keys.filter(key => key).map(key =>
                 `<div class="key-item">
                     <input type="text" value="${key}" readonly>
-                    <button class="copyKeyBtn" data-key="${key}">Копировать ключ</button>
+                    <button class="copyKeyBtn" data-key="${key}">Копировать</button>
                 </div>`
             ).join('');
             copyAllBtn.classList.remove('hidden');
@@ -179,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
             keysList.innerHTML =
                 `<div class="key-item">
                     <input type="text" value="${keys[0]}" readonly>
-                    <button class="copyKeyBtn" data-key="${keys[0]}">Копировать ключ</button>
+                    <button class="copyKeyBtn" data-key="${keys[0]}">Копировать</button>
                 </div>`;
         }
 
@@ -200,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         progressBar.style.width = '100%';
         progressText.innerText = '100%';
-        progressLog.innerText = 'Готово';
+        progressLog.innerText = 'Завершено';
 
         startBtn.classList.remove('hidden');
         keyCountGroup.classList.remove('hidden');
@@ -318,4 +390,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 });
-
