@@ -12,7 +12,7 @@
     --slider-thumb: #5336e2;
     --slider-thumb-hover: #5336e2;
     --button-bg: #5336e2;
-    --button-color: #1a1a1a;
+    --button-color: #ecf0f1;
     --button-hover: #5336e2;
     --progress-bg: #444;
     --progress-fill: #5336e2;
@@ -39,7 +39,7 @@
     --slider-thumb: #5336e2;
     --slider-thumb-hover: #5336e2;
     --button-bg: #5336e2;
-    --button-color: #1a1a1a;
+    --button-color: #ecf0f1;
     --button-hover: #5336e2;
     --progress-bg: #444;
     --progress-fill: #5336e2;
@@ -112,7 +112,7 @@ h1 {
 .game-option.selected {
     transform: scale(1.05); /* Slight scale */
     border-color: var(--selected-bg-color);
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); /* Gradient background */
+    background: linear-gradient(135deg, #5336e2 0%, #5336e2 100%); /* Gradient background */
     color: var(--selected-text-color) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     transition: all 0.3s ease-in-out; /* Smooth transition */
